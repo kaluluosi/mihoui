@@ -17,7 +17,13 @@
 ## 示例体验
 
 你可以clone这个项目然后直接运行，我已经制作了个假的星穹铁道来还原这个框架的效果。
-https://github.com/kaluluosi/mihoui/assets/1620585/2dd38ebf-fa8e-40cc-87a9-76bda5c0e447
+
+
+
+https://github.com/kaluluosi/mihoui/assets/1620585/c7475ceb-c01b-4f37-8768-804cb79f8b67
+
+
+
 ![image](https://github.com/kaluluosi/mihoui/assets/1620585/34a44b7f-bcec-4d20-a292-cf8447e9cae9)
 
 ## 用法
