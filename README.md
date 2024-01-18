@@ -1,5 +1,7 @@
 # Mihoui
 
+[English](READEME-en.md)
+
 ## 简介
 
 这是在Godot上实现的类似Mihayo的栈式UI框架。在Godot上实现这个框架比我想象中简单太多了。
