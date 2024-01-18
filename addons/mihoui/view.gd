@@ -20,7 +20,7 @@ var _stack_contorl: StackControl = StackControl.new()
 func _notification(what):
 	match what:
 		NOTIFICATION_ENTER_TREE:
-			add_child(_stack_contorl)
+			add_child(_stack_contorl, false, INTERNAL_MODE_BACK)
 			await open()
 
 ## 使用界面内置的stack layer来管理打开子界面[br]
