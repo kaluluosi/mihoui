@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://28nwxjjq1x0h"]
+
+[ext_resource type="Script" path="res://test_ui/delegate_dialog.gd" id="1_4ptrj"]
+[ext_resource type="Texture2D" uid="uid://bl5l0eq1imja4" path="res://test_ui/texture/Snipaste_2024-01-18_19-24-59.png" id="1_7msma"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j1r88"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0, 0, 1)
+
+[node name="DelegateDialog" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4ptrj")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_7msma")
+expand_mode = 1
+
+[node name="BtnEnter" type="Button" parent="."]
+layout_mode = 0
+offset_left = 839.0
+offset_top = 677.0
+offset_right = 1331.0
+offset_bottom = 738.0
+theme_type_variation = &"FlatButton"
+theme_override_styles/normal = SubResource("StyleBoxFlat_j1r88")
+
+[connection signal="pressed" from="BtnEnter" to="." method="_on_btn_enter_pressed"]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://becr0fj2d4f55"]
+
+[ext_resource type="Script" path="res://addons/mihoui/UIMgr.gd" id="1_wl3vc"]
+[ext_resource type="Script" path="res://addons/mihoui/stack_canvas_layer.gd" id="2_8q2k7"]
+
+[node name="UIMgr" type="Node"]
+script = ExtResource("1_wl3vc")
+
+[node name="StackCanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("2_8q2k7")

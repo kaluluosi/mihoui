@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://ce13yr4ebg8ql"]
+
+[ext_resource type="Texture2D" uid="uid://d1puehicobnfq" path="res://test_ui/texture/Snipaste_2024-01-18_19-23-37.png" id="1_18oii"]
+[ext_resource type="Script" path="res://test_ui/login_view.gd" id="1_lgn8g"]
+
+[node name="LoginView" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lgn8g")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_18oii")
+expand_mode = 1
+
+[node name="BtnEnter" type="Button" parent="."]
+layout_mode = 0
+offset_left = 764.0
+offset_top = 974.0
+offset_right = 1147.0
+offset_bottom = 1051.0
+
+[connection signal="pressed" from="BtnEnter" to="." method="_on_btn_enter_pressed"]

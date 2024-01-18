@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://chdwk3idt6q2s"]
+
+[ext_resource type="Texture2D" uid="uid://72ukat146mnd" path="res://test_ui/texture/Snipaste_2024-01-18_19-24-13.png" id="1_0q1kf"]
+[ext_resource type="Script" path="res://test_ui/compose_view.gd" id="1_rtb7k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n2b6a"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0, 0, 1)
+
+[node name="ComposeView" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rtb7k")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0q1kf")
+expand_mode = 1
+
+[node name="BtnEnter" type="Button" parent="."]
+layout_mode = 0
+offset_left = 837.0
+offset_top = 276.0
+offset_right = 936.0
+offset_bottom = 402.0
+theme_type_variation = &"FlatButton"
+theme_override_styles/normal = SubResource("StyleBoxFlat_n2b6a")
+
+[connection signal="pressed" from="BtnEnter" to="." method="_on_btn_enter_pressed"]

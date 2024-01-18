@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0vltgyudf74s"]
+
+[ext_resource type="Script" path="res://test_ui/phone_menu.gd" id="1_nwy8y"]
+[ext_resource type="Texture2D" uid="uid://dvd0lfms3ttmb" path="res://test_ui/texture/Snipaste_2024-01-18_19-24-03.png" id="2_3m2i7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cf3fu"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4pnbk"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0, 0, 1)
+
+[node name="PhoneMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nwy8y")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_3m2i7")
+expand_mode = 1
+
+[node name="BtnEnter" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1615.0
+offset_top = 412.0
+offset_right = 1753.0
+offset_bottom = 574.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_cf3fu")
+
+[node name="BtnExit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1827.0
+offset_top = 918.0
+offset_right = 1926.0
+offset_bottom = 1044.0
+theme_type_variation = &"FlatButton"
+theme_override_styles/normal = SubResource("StyleBoxFlat_4pnbk")
+
+[connection signal="pressed" from="BtnEnter" to="." method="_on_btn_enter_pressed"]
+[connection signal="pressed" from="BtnExit" to="." method="_on_btn_exit_pressed"]
