@@ -19,6 +19,13 @@
 你可以clone这个项目然后直接运行，我已经制作了个假的星穹铁道来还原这个框架的效果。
 
 
+
+https://github.com/kaluluosi/mihoui/assets/1620585/c7475ceb-c01b-4f37-8768-804cb79f8b67
+
+
+
+![image](https://github.com/kaluluosi/mihoui/assets/1620585/34a44b7f-bcec-4d20-a292-cf8447e9cae9)
+
 ## 用法
 
 1. 如果你只需要简单的使用，那么你可以直接用`StackCanvasLayer`节点制作一个场景来Autoload，命名为UIMgr，就像我的demo那样。
@@ -30,3 +37,6 @@
 ## 这个框架还缺什么？
 
 这个框架只能处理顶级界面和顶级界面内部的次级界面。没有对全局Hint系统提示，全局弹窗队列的支持，也没有覆盖层，这些需要你自己去实现或者等以后补充了。
+
+
+
