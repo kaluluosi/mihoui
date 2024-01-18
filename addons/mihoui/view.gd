@@ -17,11 +17,11 @@ var ui_data: Dictionary:
 
 var _stack_contorl: StackControl = StackControl.new()
 
-func _ready():
-	add_child(_stack_contorl)
-
-func _enter_tree():
-	await open()
+func _notification(what):
+	match what:
+		NOTIFICATION_ENTER_TREE:
+			add_child(_stack_contorl)
+			await open()
 
 ## 使用界面内置的stack layer来管理打开子界面[br]
 ## 用来显示二级界面。

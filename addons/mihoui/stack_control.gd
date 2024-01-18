@@ -9,13 +9,13 @@ var _views := {}
 
 ## 加个锁，防止界面还没打开完毕就因重复点击重复打开界面
 var is_opening: bool
-
-func _init():
-	set_anchors_preset(Control.PRESET_FULL_RECT)
-	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	
-func _ready():
-	child_exiting_tree.connect(_on_child_exiting)
+func _notification(what):
+	match what:
+		NOTIFICATION_ENTER_TREE:
+			set_anchors_preset(Control.PRESET_FULL_RECT)
+			mouse_filter = Control.MOUSE_FILTER_IGNORE
+			child_exiting_tree.connect(_on_child_exiting)
 
 func open(view_file: String, data:={}) -> View:
 	if is_opening:

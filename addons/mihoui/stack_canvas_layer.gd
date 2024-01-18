@@ -6,9 +6,12 @@ const StackControl = preload ("res://addons/mihoui/stack_control.gd")
 
 var _stack: StackControl = StackControl.new()
 
-func _ready():
-	add_child(_stack)
-	
+func _notification(what):
+
+	match what:
+		NOTIFICATION_READY:
+			add_child(_stack)
+
 func open(file_path: String, ui_data:={}):
 	_stack.open(file_path, ui_data)
 	
