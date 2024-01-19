@@ -54,7 +54,7 @@ func _open_view(view):
 
 func _close_view(view):
 	if view.has_method("close"):
-		await view.close()
+		await view.close(false)
 	else:
 		view.hide()
 

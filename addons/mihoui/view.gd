@@ -29,18 +29,27 @@ func open_subview(file_path: String, data:={}):
 	_stack_contorl.open(file_path, data)
 
 ## 打卡界面[br]
-func open(data:={}):
-	show()
-	await _post_open()
+func open():
+	await process_show()
 	opened.emit()
 ## 关闭界面[br]
-## 默认只是隐藏不会销毁。
-func close(free: bool=false):
-	await _post_close()
-	hide()
+## 默认free是true会直接销毁这个界面。
+## XXX: 将隐藏和销毁都放到这个方法感觉总是有点混乱
+func close(free: bool=true):
+	await process_hide()
 	closed.emit()
 	if free:
 		queue_free()
+
+## 过程式hide，跟hide不同它会等待[_post_close]执行完才hide
+func process_hide():
+	await _post_close()
+	hide()
+
+## 过程式show，跟show不同他会等待[_post_show]执行完才show
+func process_show():
+	show()
+	await _post_open()
 
 ## 用来处理打开的时候的动效[br]
 ## 想要执行动效就覆盖这个函数，记得要await动画。
@@ -53,7 +62,7 @@ func _post_close():
 	pass
 
 ## ui_cancel动作触发时的操作
-## 默认是释放这个节点，你可以重写这个函数拦截
+## NOTE: 默认是释放这个节点，你可以重写这个函数拦截
 func _on_ui_cancel():
 	close(true)
 
